@@ -9,6 +9,7 @@ import NavBar from "../components/navigation/NavBar";
 import Container from "../components/basecomponents/Container";
 import Cart from "../components/cart/Cart";
 import Drawer from "../components/navigation/Drawer";
+import Footer from "../components/basecomponents/Footer";
 
 export default defineComponent({
   setup(props, context) {
@@ -18,11 +19,12 @@ export default defineComponent({
   render() {
     return (
       <>
-        <main class="min-h-screen relative">
+        <main class="min-h-full relative">
           <NavBar />
           <Container />
           <Drawer />
           <Cart />
+          <Footer />
         </main>
       </>
     );

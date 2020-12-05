@@ -25,7 +25,7 @@ export default defineComponent({
             {/* header */}
             <div class="w-full h-20 bg-gray-100 flex justify-start items-center relative px-3 flex-shrink-0">
               <a class="flex" href="/">
-                <span class="sr-only">Medsy</span>
+                <span class="sr-only ml-4">Medsy</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100px"
@@ -82,56 +82,40 @@ export default defineComponent({
               </button>
             </div>
             {/* menu */}
-            <div class="ml-3 mt-3 os-host os-host-foreign menu-scrollbar flex-grow os-theme-thin os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition">
-              <div class="os-resize-observer-host observed">
-                <div
-                  class="os-resize-observer"
-                  style="left: 0px; right: auto;"
-                ></div>
-              </div>
-              <div
-                class="os-size-auto-observer observed"
-                style="height: calc(100% + 1px); float: left;"
-              >
-                <div class="os-resize-observer"></div>
-              </div>
-              <div
-                class="os-content-glue"
-                style="margin: 0px; width: 400px; height: 592px;"
-              ></div>
+            <div class=" os-host os-host-foreign menu-scrollbar flex-grow os-theme-thin os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition">
               <div class="os-padding">
                 <div class="os-viewport os-viewport-native-scrollbars-invisible">
                   <div
                     class="os-content"
                     style="padding: 0px; height: 100%; width: 100%;"
                   >
-                    <div class="flex flex-col py-60px pb-40px lg:pb-60px">
+                    <div class="flex flex-col py-60px pb-40px lg:pb-60px px-3 py-3">
                       <a
-                        class="menu-item relative text-gray-900 pl-30px pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900 font-semibold active"
+                        class="menu-item relative text-gray-900 pl-3 pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900 font-semibold active"
                         href="/"
                       >
                         Medsy Modern
                       </a>
                       <a
-                        class="menu-item relative text-gray-900 pl-30px pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
+                        class="menu-item relative text-gray-900 pl-3 pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
                         href="https://medsy-minimal.vercel.app/"
                       >
                         Medsy Minimal
                       </a>
                       <a
-                        class="menu-item relative text-gray-900 pl-30px pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
+                        class="menu-item relative text-gray-900 pl-3 pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
                         href="https://medsy-classic.vercel.app/"
                       >
                         Medsy Classic
                       </a>
                       <a
-                        class="menu-item relative text-gray-900 pl-30px pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
+                        class="menu-item relative text-gray-900 pl-3 pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
                         href="/faq"
                       >
                         FAQ
                       </a>
                       <a
-                        class="menu-item relative text-gray-900 pl-30px pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
+                        class="menu-item relative text-gray-900 pl-3 pr-4 mb-8 transition duration-300 ease-in-out last:mb-0 hover:text-gray-900"
                         href="/terms"
                       >
                         Terms &amp; Conditions
@@ -140,26 +124,9 @@ export default defineComponent({
                   </div>
                 </div>
               </div>
-              <div class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable">
-                <div class="os-scrollbar-track os-scrollbar-track-off">
-                  <div
-                    class="os-scrollbar-handle"
-                    style="width: 100%; transform: translate(0px, 0px);"
-                  ></div>
-                </div>
-              </div>
-              <div class="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable">
-                <div class="os-scrollbar-track os-scrollbar-track-off">
-                  <div
-                    class="os-scrollbar-handle"
-                    style="height: 100%; transform: translate(0px, 0px);"
-                  ></div>
-                </div>
-              </div>
-              <div class="os-scrollbar-corner"></div>
             </div>
             {/* footer */}
-            <div class="flex items-center justify-start border-t border-gray-300 bg-gray-100 h-12 px-3 flex-shrink-0 lg:hidden">
+            <div class="flex items-center justify-start border-t border-gray-300 bg-gray-100 h-12 px-3 flex-shrink-0">
               <a href="/" class="social facebook" target="_blank">
                 <span class="sr-only">facebook</span>
                 <svg

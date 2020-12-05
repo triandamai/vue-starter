@@ -24,7 +24,7 @@ const showCart = ref<boolean>(false);
 const showDrawer = ref<boolean>(false);
 const itemCart = reactive<Items>({
   realItems: [],
-  items: [{ text: "Item" }],
+  items: [],
   isEmpty: false
 });
 

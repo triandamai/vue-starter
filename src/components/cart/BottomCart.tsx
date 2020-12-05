@@ -4,11 +4,11 @@
  * Author   Trian Damai
  * */
 import { defineComponent, ref } from "vue";
+import { CartStore } from "../../store/mystore";
 
 export default defineComponent({
   setup() {
-    const data = ref();
-    return { data };
+    return { ...CartStore() };
   },
   render() {
     return (
@@ -23,7 +23,17 @@ export default defineComponent({
               Rp 0.000,00-
             </span>
           </div>
+
           <button
+            v-show={this.itemCart.items.length !== 0}
+            class="flex items-center justify-center flex-shrink-0 font-normal w-auto uppercase rounded outline-none transition duration-250 ease-in-out focus:outline-none text-white bg-gray-900 hover:bg-gray-900 h-11 px-3 big mt-2"
+            type="button"
+            aria-label="button"
+          >
+            Confirm
+          </button>
+          <button
+            v-show={this.itemCart.items.length === 0}
             class="flex items-center justify-center flex-shrink-0 font-normal w-auto uppercase rounded outline-none transition duration-200 ease-in-out focus:outline-none text-gray-500 bg-gray-300 cursor-not-allowed hover:bg-gray-300 h-11 px-3 big mt-2"
             type="button"
             aria-label="button"
