@@ -1,3 +1,9 @@
+/**
+ * Date     05 December 2020
+ * Time     21:31
+ * Author   Trian Damai
+ * */
+
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
