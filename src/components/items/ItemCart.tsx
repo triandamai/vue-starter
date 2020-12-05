@@ -29,7 +29,7 @@ export default defineComponent({
             </span>
             <div class="mt-3 flex items-center justify-between">
               <div class="group flex items-center justify-between flex-shrink-0 rounded overflow-hidden bg-gray-900 shadow-floatingUp h-35px ">
-                <button class="px-3 py-2 flex items-center justify-center outline-none transition-colors duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none">
+                <button class="px-3 py-2 flex items-center justify-center outline-none  duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="12px"
@@ -105,7 +105,7 @@ export default defineComponent({
                 <span class="px-4 py-2 font-semibold text-13px text-white flex items-center justify-center h-full w-40px transition-colors duration-250 ease-in-out cursor-default">
                   1
                 </span>
-                <button class="px-3 py-2 flex items-center justify-center outline-none transition-colors duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none">
+                <button class="px-3 py-2 flex items-center justify-center outline-none  duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none">
                   <svg
                     data-name="plus (2)"
                     xmlns="http://www.w3.org/2000/svg"
