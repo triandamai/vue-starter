@@ -13,12 +13,6 @@ interface Item {
 }
 
 export default defineComponent({
-  components: {
-    NavBar,
-    Container,
-    Cart
-  },
-
   setup(props, context) {
     return {};
   },
