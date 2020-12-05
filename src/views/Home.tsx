@@ -8,9 +8,7 @@ import { defineComponent, ref } from "vue";
 import NavBar from "../components/navigation/NavBar";
 import Container from "../components/basecomponents/Container";
 import Cart from "../components/cart/Cart";
-interface Item {
-  title: string;
-}
+import Drawer from "../components/navigation/Drawer";
 
 export default defineComponent({
   setup(props, context) {
@@ -23,6 +21,7 @@ export default defineComponent({
         <main class="min-h-screen relative">
           <NavBar />
           <Container />
+          <Drawer />
           <Cart />
         </main>
       </>

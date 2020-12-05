@@ -7,9 +7,6 @@
 import { defineComponent, ref } from "vue";
 import Item from "../items/ItemCart";
 export default defineComponent({
-  components: {
-    Item
-  },
   setup() {
     const data = ref();
     return {

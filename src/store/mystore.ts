@@ -21,6 +21,7 @@ export interface Items {
 
 //State
 const showCart = ref<boolean>(false);
+const showDrawer = ref<boolean>(false);
 const itemCart = reactive<Items>({ realItems: [], items: [], isEmpty: false });
 
 //Action
@@ -35,5 +36,11 @@ const CartStore = () => {
   const getItems = () => {};
   return { toggleCart, addItem, showCart, itemCart };
 };
+const DrawerStore = () => {
+  const toggleDrawer = () => {
+    showDrawer.value = !showDrawer.value;
+  };
+  return { showDrawer, toggleDrawer };
+};
 
-export { CartStore };
+export { CartStore, DrawerStore };

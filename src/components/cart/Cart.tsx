@@ -13,11 +13,8 @@ import Items from "../cart/HasItem";
 import Item from "../items/ItemCart";
 export default defineComponent({
   setup(props, context) {
-    const { toggleCart, showCart, itemCart } = CartStore();
     return {
-      toggleCart,
-      showCart,
-      itemCart
+      ...CartStore()
     };
   },
   render() {

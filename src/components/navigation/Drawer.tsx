@@ -5,20 +5,25 @@
  * */
 
 import { defineComponent, ref } from "vue";
-import { CartStore } from "../../store/mystore";
+import { DrawerStore } from "../../store/mystore";
 
 export default defineComponent({
   setup() {
-    const { showCart, toggleCart } = CartStore();
-    return { toggleCart, showCart };
+    return { ...DrawerStore() };
   },
   render() {
     return (
       <>
-        <div class="overlay overlay-menu" role="button"></div>
-        <div class="drawer drawer-menu open">
+        <div
+          v-show={this.showDrawer}
+          onClick={this.toggleDrawer}
+          class="overlay overlay-menu"
+          role="button"
+        ></div>
+        <div v-show={this.showDrawer} class="drawer drawer-menu open">
           <div class="flex flex-col w-full h-full">
-            <div class="w-full h-90px bg-gray-100 flex justify-start items-center relative px-30px flex-shrink-0">
+            {/* header */}
+            <div class="w-full h-20 bg-gray-100 flex justify-start items-center relative px-3 flex-shrink-0">
               <a class="flex" href="/">
                 <span class="sr-only">Medsy</span>
                 <svg
@@ -53,13 +58,14 @@ export default defineComponent({
                   </g>
                 </svg>
               </a>
-              <div class="flex items-center justify-end ml-auto pl-30px pr-50px text-gray-700 flex-shrink-0 lg:hidden">
-                <span class="font-semibold text-base text-14px ml-3">
+              <div class="flex items-center justify-end ml-auto mr-5 pl-3 pr-5 text-gray-700 flex-shrink-0 lg:hidden">
+                <span class="font-semibold text-base  ml-3">
                   +1 855-766-5885
                 </span>
               </div>
               <button
-                class="w-30px h-30px flex items-center justify-center text-gray-500 absolute right-25px focus:outline-none"
+                onClick={this.toggleDrawer}
+                class="w-5 h-30 flex items-center justify-center text-gray-500 absolute right-4 focus:outline-none"
                 aria-label="close"
               >
                 <svg
@@ -75,7 +81,8 @@ export default defineComponent({
                 </svg>
               </button>
             </div>
-            <div class="os-host os-host-foreign menu-scrollbar flex-grow os-theme-thin os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition">
+            {/* menu */}
+            <div class="ml-3 mt-3 os-host os-host-foreign menu-scrollbar flex-grow os-theme-thin os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition">
               <div class="os-resize-observer-host observed">
                 <div
                   class="os-resize-observer"
@@ -151,7 +158,8 @@ export default defineComponent({
               </div>
               <div class="os-scrollbar-corner"></div>
             </div>
-            <div class="flex items-center justify-start border-t border-gray-300 bg-gray-100 h-12 px-30px flex-shrink-0 lg:hidden">
+            {/* footer */}
+            <div class="flex items-center justify-start border-t border-gray-300 bg-gray-100 h-12 px-3 flex-shrink-0 lg:hidden">
               <a href="/" class="social facebook" target="_blank">
                 <span class="sr-only">facebook</span>
                 <svg

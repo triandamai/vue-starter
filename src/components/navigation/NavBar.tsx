@@ -5,12 +5,11 @@
  * */
 
 import { defineComponent } from "vue";
-import { CartStore } from "../../store/mystore";
+import { CartStore, DrawerStore } from "../../store/mystore";
 
 export default defineComponent({
   setup(props, { emit }) {
-    const { toggleCart, showCart } = CartStore();
-    return { toggleCart, showCart };
+    return { ...CartStore(), ...DrawerStore() };
   },
   render() {
     return (
@@ -18,6 +17,7 @@ export default defineComponent({
         <header class="flex items-center shadow-sm text-gray-700 body-font fixed bg-white w-full h-90 z-20 py-5 ">
           {/* buger */}
           <button
+            onClick={this.toggleDrawer}
             aria-label="menu"
             class="flex flex-col items-center justify-center w-auto flex-shrink-0 h-full outline-none focus:outline-none"
           >
