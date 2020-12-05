@@ -22,7 +22,11 @@ export interface Items {
 //State
 const showCart = ref<boolean>(false);
 const showDrawer = ref<boolean>(false);
-const itemCart = reactive<Items>({ realItems: [], items: [], isEmpty: false });
+const itemCart = reactive<Items>({
+  realItems: [],
+  items: [{ text: "Item" }],
+  isEmpty: false
+});
 
 //Action
 const CartStore = () => {

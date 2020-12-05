@@ -6,26 +6,20 @@
 
 import { defineComponent, ref } from "vue";
 import Item from "../items/ItemCart";
+import { CartStore } from "../../store/mystore";
 export default defineComponent({
   setup() {
-    const data = ref();
     return {
-      data
+      ...CartStore()
     };
   },
   render() {
     return (
       <>
         <div class=" flex-grow overflow-y-auto">
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
+          {this.itemCart.items.map((item, index) => {
+            return <Item />;
+          })}
         </div>
       </>
     );
