@@ -17,8 +17,8 @@ export default defineComponent({
     return (
       <>
         <div class=" flex-grow overflow-y-auto">
-          {this.itemCart.items.map((item, index) => {
-            return <Item />;
+          {this.itemCart.itemscart.map((item, index) => {
+            return <Item data-item={item} />;
           })}
         </div>
       </>

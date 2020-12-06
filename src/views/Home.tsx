@@ -10,12 +10,12 @@ import Container from "../components/basecomponents/Container";
 import Cart from "../components/cart/Cart";
 import Drawer from "../components/navigation/Drawer";
 import Footer from "../components/basecomponents/Footer";
+import Banner from "../components/basecomponents/Banner";
 
 export default defineComponent({
   setup(props, context) {
     return {};
   },
-
   render() {
     return (
       <>
@@ -24,6 +24,7 @@ export default defineComponent({
           <Container />
           <Drawer />
           <Cart />
+          <Banner />
           <Footer />
         </main>
       </>

@@ -11,7 +11,7 @@ export default defineComponent({
   render() {
     return (
       <>
-        <footer class="w-full flex items-center justify-center bg-white shadow-footer px-4 py-30 lg:px-30 lg:justify-between">
+        <footer class="w-full flex items-center justify-center bg-white shadow-footer py-5 lg:px-30 lg:justify-between">
           <p class="text-gray-900">
             Copyright © 2020
             <a

@@ -41,6 +41,11 @@
   z-index: 21;
   position: fixed;
 }
+.component-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  position: absolute;
+}
 .component-overlay,
 .overlay {
   width: 100%;
@@ -208,4 +213,13 @@
   color: #999;
   margin-right: 30px;
   transition: all 0.2s ease-in-out;
+}
+
+/** component overlay banner*/
+.uppercase {
+  text-emphasis: uppercase;
+}
+
+.text-36px {
+  font-size: 36px;
 }

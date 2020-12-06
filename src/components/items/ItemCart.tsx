@@ -5,9 +5,11 @@
  * */
 
 import { defineComponent, ref } from "vue";
+import { ItemCart } from "../../store/mystore";
 
 export default defineComponent({
-  setup() {
+  setup(props) {
+    console.log(props);
     const data = ref();
     return { data };
   },

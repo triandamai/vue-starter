@@ -55,8 +55,8 @@ export default defineComponent({
               <h2 class="font-md text-lg px mb-3">Keranjang Belanja </h2>
             </div>
             {/*  */}
-            <Empty v-show={this.itemCart.items.length === 0} />
-            <Items v-show={this.itemCart.items.length !== 0} />
+            <Empty v-show={this.itemCart.itemscart.length === 0} />
+            <Items v-show={this.itemCart.itemscart.length !== 0} />
 
             <Bottom />
           </div>
