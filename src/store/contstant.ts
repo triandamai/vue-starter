@@ -2,9 +2,13 @@
  * Date     05 December 2020
  * Time     21:31
  * Author   Trian Damai
- *
  * Type for everything used in this project
  */
+
+/**
+ * @type Item for "product"
+ * */
+
 export interface Item {
   id: number;
   title: string;
@@ -13,18 +17,26 @@ export interface Item {
   image: string;
   qty: string;
 }
+/**
+ * @type from product after add to cart
+ * */
 export interface ItemCart {
   item: Item;
   quantity: number;
   total: number;
 }
+/**
+ * @type all data in cart will place here
+ * */
 export interface ItemsCart {
   items: Array<Item>;
   itemscart: Array<ItemCart>;
   isEmpty: boolean;
   totalPay: number;
 }
-
+/**
+ * @type user for user auth etc
+ * */
 export interface User {
   id: string;
   name: string;
@@ -32,7 +44,9 @@ export interface User {
   password: string;
   token: string;
 }
-
+/**
+ * @type token auth
+ * */
 export interface Token {
   token: string;
   expired: string;
@@ -41,6 +55,7 @@ export interface Token {
  * @param user
  * @param token
  * @returns data from sessionStorage
+ * now its placed here soon will move to other module
  * */
 
 export const KEY_USER = "xxzzAabbb";

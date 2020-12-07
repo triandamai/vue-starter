@@ -48,7 +48,7 @@ export class ApiService implements IHttpClient {
         .get(url, options)
         .then((response: any) => {
           //return val
-          resolve(response);
+          resolve(response as T);
         })
         .catch((response: any) => {
           reject(response);
@@ -76,7 +76,7 @@ export class ApiService implements IHttpClient {
       axios
         .post(url, payload, options)
         .then((response: any) => {
-          resolve(response);
+          resolve(response as T);
         })
         .catch((response: any) => {
           reject(response);

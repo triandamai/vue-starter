@@ -3,6 +3,10 @@
  * Time     21:31
  * Author   Trian Damai
  *
+ * @todo karena vue versi 3 ini sudah ada composition api "mungkin" kita tidak perlus vuex lagi
+ *  lihat artikel
+ *  https://dev.to/blacksonic/you-might-not-need-vuex-with-vue-3-52e4
+ *
  */
 
 /* eslint-disable */
@@ -39,7 +43,26 @@ const itemCart = reactive<ItemsCart>({
       total: 1000
     }
   ],
-  items: [],
+  items: [
+    {
+      id: 1,
+      title: "Pepsodent",
+      price: 2500,
+      category: "",
+      image: "",
+      qty: ""
+    },
+    { id: 2, title: "Dettol", price: 1500, category: "", image: "", qty: "" },
+    { id: 3, title: "Sonka", price: 2000, category: "", image: "", qty: "" },
+    {
+      id: 4,
+      title: "Mint Menthol",
+      price: 3500,
+      category: "",
+      image: "",
+      qty: ""
+    }
+  ],
   isEmpty: false,
   totalPay: 2000
 });
