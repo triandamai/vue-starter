@@ -7,27 +7,7 @@
 
 /* eslint-disable */
 import { ref, reactive } from "vue";
-
-export const TOGGLECART = "";
-
-export interface Item {
-  id: number;
-  title: string;
-  price: number;
-  category: string;
-  image: string;
-  qty: string;
-}
-export interface ItemCart {
-  item: Item;
-  quantity: number;
-  total: number;
-}
-export interface ItemsCart {
-  items: Array<Item>;
-  itemscart: Array<ItemCart>;
-  isEmpty: boolean;
-}
+import { Item, ItemsCart } from "./types";
 
 //State
 const showCart = ref<boolean>(true);

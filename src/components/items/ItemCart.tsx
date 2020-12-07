@@ -5,13 +5,12 @@
  * */
 
 import { defineComponent, ref } from "vue";
-import { ItemCart } from "../../store/mystore";
+import { ItemCart } from "../../store/types";
 
 export default defineComponent({
-  setup(props) {
+  setup(props: { item: ItemCart }) {
     console.log(props);
-    const data = ref();
-    return { data };
+    return { props };
   },
   render() {
     return (
@@ -25,9 +24,11 @@ export default defineComponent({
             />
           </div>
           <div class="flex flex-col w-full px-5">
-            <span class="text-md text-gray-900">PerioBiotic Toothpaste</span>
+            <span class="text-md text-gray-900">
+              {this.props.item.item.title}
+            </span>
             <span class="text-13px text-gray-500 mt-5px mb-10px">
-              Unit Price &nbsp;$3
+              Unit Price &nbsp;Rp. {this.props.item.item.price}
             </span>
             <div class="mt-3 flex items-center justify-between">
               <div class="group flex items-center justify-between flex-shrink-0 rounded overflow-hidden bg-gray-900 shadow-floatingUp h-35px ">
