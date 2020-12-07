@@ -22,6 +22,7 @@ export interface ItemsCart {
   items: Array<Item>;
   itemscart: Array<ItemCart>;
   isEmpty: boolean;
+  totalPay: number;
 }
 
 export interface User {

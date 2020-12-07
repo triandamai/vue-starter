@@ -5,12 +5,19 @@
  * */
 
 import { defineComponent, ref } from "vue";
-import { ItemCart } from "../../store/types";
+import { CartStore } from "../../store/mystore";
 
 export default defineComponent({
-  setup(props: { item: ItemCart }) {
-    console.log(props);
-    return { props };
+  props: {
+    item: {
+      type: Object
+    },
+    index: {
+      type: Number
+    }
+  },
+  setup(props) {
+    return { props, ...CartStore() };
   },
   render() {
     return (
@@ -25,15 +32,22 @@ export default defineComponent({
           </div>
           <div class="flex flex-col w-full px-5">
             <span class="text-md text-gray-900">
-              {this.props.item.item.title}
+              {this.props.item?.item.title}
             </span>
             <span class="text-13px text-gray-500 mt-5px mb-10px">
-              Unit Price &nbsp;Rp. {this.props.item.item.price}
+              Unit Price &nbsp;Rp. {this.props.item?.item.price}
             </span>
             <div class="mt-3 flex items-center justify-between">
               <div class="group flex items-center justify-between flex-shrink-0 rounded overflow-hidden bg-gray-900 shadow-floatingUp h-35px ">
-                <button class="px-3 py-2 flex items-center justify-center outline-none  duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none">
+                {/* add button */}
+                <button
+                  onClick={() => {
+                    this.minQty(this.props.index ?? 0);
+                  }}
+                  class="px-3 py-2 flex items-center justify-center outline-none  duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none"
+                >
                   <svg
+                    v-show={this.item?.quantity <= 1}
                     xmlns="http://www.w3.org/2000/svg"
                     width="12px"
                     height="12px"
@@ -104,11 +118,32 @@ export default defineComponent({
                       </g>
                     </g>
                   </svg>
+                  <svg
+                    v-show={this.item?.quantity > 1}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12px"
+                    height="2px"
+                    viewBox="0 0 12 1.5"
+                  >
+                    <rect
+                      data-name="Rectangle 970"
+                      width="12px"
+                      height="2px"
+                      fill="currentColor"
+                    ></rect>
+                  </svg>
                 </button>
+                {/* qty */}
                 <span class="px-4 py-2 font-semibold text-13px text-white flex items-center justify-center h-full w-40px transition-colors duration-250 ease-in-out cursor-default">
-                  1
+                  {this.item?.quantity}
                 </span>
-                <button class="px-3 py-2 flex items-center justify-center outline-none  duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none">
+                {/* min button */}
+                <button
+                  onClick={() => {
+                    this.addQty(this.props.index ?? 0);
+                  }}
+                  class="px-3 py-2 flex items-center justify-center outline-none  duration-250 ease-in-out h-full w-1/2 text-white bg-gray-900 transition duration-300 hover:bg-gray-3a focus:outline-none"
+                >
                   <svg
                     data-name="plus (2)"
                     xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +162,7 @@ export default defineComponent({
                 </button>
               </div>
               <span class="font-semibold text-16px text-gray-900 flex-shrink-0">
-                $3.00
+                Rp. {this.item?.total}
               </span>
             </div>
           </div>

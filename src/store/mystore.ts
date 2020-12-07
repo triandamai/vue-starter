@@ -7,7 +7,7 @@
 
 /* eslint-disable */
 import { ref, reactive } from "vue";
-import { Item, ItemsCart } from "./types";
+import { ItemsCart } from "./contstant";
 
 //State
 const showCart = ref<boolean>(true);
@@ -24,7 +24,7 @@ const itemCart = reactive<ItemsCart>({
         image: ""
       },
       quantity: 1,
-      total: 0
+      total: 1000
     },
     {
       item: {
@@ -36,11 +36,12 @@ const itemCart = reactive<ItemsCart>({
         image: ""
       },
       quantity: 1,
-      total: 0
+      total: 1000
     }
   ],
   items: [],
-  isEmpty: false
+  isEmpty: false,
+  totalPay: 2000
 });
 
 //Action
@@ -48,12 +49,24 @@ const CartStore = () => {
   const toggleCart = () => {
     showCart.value = !showCart.value;
   };
-  const addItem = () => {};
-  const addItems = (items: Array<Item>) => {};
-  const sortItems = (query: any) => {};
-  const searchItems = (query: any) => {};
-  const getItems = () => {};
-  return { toggleCart, addItem, showCart, itemCart };
+  const addQty = (i: number) => {
+    itemCart.itemscart[i].quantity++;
+    itemCart.itemscart[i].total =
+      itemCart.itemscart[i].total + itemCart.itemscart[i].item.price;
+    itemCart.totalPay += itemCart.itemscart[i].item.price;
+  };
+  const minQty = (i: number) => {
+    if (itemCart.itemscart[i].quantity <= 1) {
+      itemCart.totalPay -= itemCart.itemscart[i].total;
+      itemCart.itemscart.splice(i, 1);
+    } else {
+      itemCart.itemscart[i].quantity--;
+      itemCart.itemscart[i].total =
+        itemCart.itemscart[i].total - itemCart.itemscart[i].item.price;
+      itemCart.totalPay -= itemCart.itemscart[i].item.price;
+    }
+  };
+  return { toggleCart, addQty, minQty, showCart, itemCart };
 };
 const DrawerStore = () => {
   const toggleDrawer = () => {

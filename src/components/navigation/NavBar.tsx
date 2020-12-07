@@ -189,7 +189,7 @@ export default defineComponent({
               style="width:18px; height:18px; font-size:10px; top:-10px;right:-10px"
               class=" flex items-center justify-center bg-gray-900 text-white absolute rounded-full"
             >
-              1
+              {this.itemCart.itemscart.length}
             </span>
           </button>
         </header>
